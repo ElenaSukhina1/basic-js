@@ -14,7 +14,18 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getCommonCharacterCount(s1, s2) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
+  let arr1 = s1.split('')
+  let arr2 = s2.split('')
+  let newArr = []
+  arr1.forEach((value)=>{
+    let index = arr2.indexOf(value);
+    if(index !== -1){
+      arr2.splice(index, 1);
+      newArr.push(value)
+    }
+  })
   
+  return newArr.length
 }
 
 module.exports = {
